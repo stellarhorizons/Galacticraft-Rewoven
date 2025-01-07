@@ -225,6 +225,7 @@ public class LanderEntity extends AbstractLanderEntity implements Container, Sca
                     e *= 0.05F;
                     this.push(-d, 0.0, -e);
                 }
+                entity.resetFallDistance();
             }
         }
     }
