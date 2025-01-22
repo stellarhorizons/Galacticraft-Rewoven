@@ -197,15 +197,13 @@ public class LanderEntity extends AbstractLanderEntity implements Container, Sca
 
         if (!entities.isEmpty()) {
             for (Entity entity : entities) {
-                if (!this.getPassengers().contains(entity)) {
-                    push(entity);
-                }
+                push(entity);
             }
         }
     }
 
     public void push(Entity entity) {
-        if (!this.getPassengers().contains(entity) && this.getVehicle() != entity) {
+        if (this.getPassengers().contains(entity) && this.getVehicle() != entity) {
             if (!entity.noPhysics && !this.noPhysics) {
                 double d = entity.getX() - this.getX();
                 double e = entity.getZ() - this.getZ();
@@ -225,7 +223,6 @@ public class LanderEntity extends AbstractLanderEntity implements Container, Sca
                     e *= 0.05F;
                     this.push(-d, 0.0, -e);
                 }
-                entity.resetFallDistance();
             }
         }
     }
