@@ -203,7 +203,7 @@ public class LanderEntity extends AbstractLanderEntity implements Container, Sca
     }
 
     public void push(Entity entity) {
-        if (this.getPassengers().contains(entity) && this.getVehicle() != entity) {
+        if (!this.getPassengers().contains(entity) && this.getVehicle() != entity) {
             if (!entity.noPhysics && !this.noPhysics) {
                 double d = entity.getX() - this.getX();
                 double e = entity.getZ() - this.getZ();
