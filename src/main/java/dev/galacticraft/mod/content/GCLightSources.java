@@ -36,6 +36,7 @@ public class GCLightSources {
             new LightSource(Component.translatable(Translations.SolarPanel.LIGHT_SOURCE_SUN).setStyle(Constant.Text.Color.YELLOW_STYLE), 1.0, 1.0),
             new LightSource(Component.translatable(Translations.SolarPanel.LIGHT_SOURCE_EARTH).setStyle(Constant.Text.Color.GREEN_STYLE), 0.07, 1.0),
             new LightSource(Component.translatable(Translations.SolarPanel.LIGHT_SOURCE_NONE).setStyle(Constant.Text.Color.BLUE_STYLE), 0.0, 1.0),
+            new LightSource(Component.translatable(Translations.SolarPanel.LIGHT_SOURCE_NONE).setStyle(Constant.Text.Color.DARK_GRAY_STYLE), 0.0, 1.0),
             new LightSource(Component.translatable(Translations.SolarPanel.LIGHT_SOURCE_NONE).setStyle(Constant.Text.Color.WHITE_STYLE), 0.0, 1.0));
 
     public static void register() {
