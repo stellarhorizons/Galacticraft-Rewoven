@@ -43,7 +43,7 @@ import net.minecraft.world.level.Level;
 
 import java.util.List;
 
-public class OxygenTankItem extends Item {
+public class OxygenTankItem extends AccessoryItem {
     public final long capacity;
 
     public OxygenTankItem(Properties settings, int capacity) {
@@ -93,18 +93,5 @@ public class OxygenTankItem extends Item {
         StorageView<FluidVariant> storage = (StorageView<FluidVariant>) ContainerItemContext.withConstant(stack).find(FluidStorage.ITEM);
         assert storage != null;
         tooltip.add(Component.translatable(Translations.Tooltip.OXYGEN_REMAINING, storage.getAmount() + "/" + storage.getCapacity()).setStyle(Constant.Text.Color.getStorageLevelStyle(1.0 - ((double) storage.getAmount() / (double) storage.getCapacity()))));
-    }
-
-    @Override
-    public InteractionResultHolder<ItemStack> use(Level world, Player user, InteractionHand hand) {
-        ItemStack copy = user.getItemInHand(hand).copy();
-        try (Transaction transaction = Transaction.openOuter()) {
-            long l = InventoryStorage.of(user.galacticraft$getOxygenTanks(), null).insert(ItemVariant.of(copy), copy.getCount(), transaction);
-            if (l == copy.getCount()) {
-                transaction.commit();
-                return new InteractionResultHolder<>(InteractionResult.SUCCESS, ItemStack.EMPTY);
-            }
-        }
-        return super.use(world, user, hand);
     }
 }
