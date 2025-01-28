@@ -43,43 +43,44 @@ public class CircuitFabricatorScreen extends MachineScreen<CircuitFabricatorBloc
     private static final int INITIAL_PROGRESS_U = 0;
     private static final int INITIAL_PROGRESS_V = 186;
     private static final int INITIAL_PROGRESS_X = 48;
-    private static final int INITIAL_PROGRESS_Y = 21;
+    private static final int INITIAL_PROGRESS_Y = 23;
     private static final int SECONDARY_PROGRESS_U = 31;
     private static final int SECONDARY_PROGRESS_V = 216;
     private static final int SECONDARY_PROGRESS_X = 79;
-    private static final int SECONDARY_PROGRESS_Y = 51;
+    private static final int SECONDARY_PROGRESS_Y = 53;
     private static final int SECONDARY_CONCURRENT_PROGRESS_U = 31;
     private static final int SECONDARY_CONCURRENT_PROGRESS_V = 238;
     private static final int SECONDARY_CONCURRENT_PROGRESS_X = 79;
-    private static final int SECONDARY_CONCURRENT_PROGRESS_Y = 73;
+    private static final int SECONDARY_CONCURRENT_PROGRESS_Y = 75;
     private static final int SECONDARY_CONCURRENT_PROGRESS_2_U = 45;
     private static final int SECONDARY_CONCURRENT_PROGRESS_2_V = 221;
     private static final int SECONDARY_CONCURRENT_PROGRESS_2_X = 93;
-    private static final int SECONDARY_CONCURRENT_PROGRESS_2_Y = 69;
+    private static final int SECONDARY_CONCURRENT_PROGRESS_2_Y = 71;
     private static final int TERTIARY_PROGRESS_U = 49;
     private static final int TERTIARY_PROGRESS_V = 216;
     private static final int TERTIARY_PROGRESS_X = 97;
-    private static final int TERTIARY_PROGRESS_Y = 51;
+    private static final int TERTIARY_PROGRESS_Y = 53;
     private static final int QUATERNARY_PROGRESS_U = 65;
     private static final int QUATERNARY_PROGRESS_V = 220;
     private static final int QUATERNARY_PROGRESS_X = 113;
-    private static final int QUATERNARY_PROGRESS_Y = 55;
+    private static final int QUATERNARY_PROGRESS_Y = 57;
     private static final int QUINARY_PROGRESS_U = 92;
     private static final int QUINARY_PROGRESS_V = 197;
     private static final int QUINARY_PROGRESS_X = 140;
-    private static final int QUINARY_PROGRESS_Y = 51;
+    private static final int QUINARY_PROGRESS_Y = 53;
     private static final int QUINARY_PROGRESS_HEIGHT = 19;
     private static final int SENARY_PROGRESS_U = 110;
     private static final int SENARY_PROGRESS_V = 220;
     private static final int SENARY_PROGRESS_X = 158;
-    private static final int SENARY_PROGRESS_Y = 55;
+    private static final int SENARY_PROGRESS_Y = 57;
 
     public CircuitFabricatorScreen(RecipeMachineMenu<RecipeInput, FabricationRecipe, CircuitFabricatorBlockEntity> handler, Inventory inv, Component title) {
         super(handler, title, Constant.ScreenTexture.CIRCUIT_FABRICATOR_SCREEN);
         this.imageHeight = 176;
+        this.imageWidth = 176;
 
         this.capacitorX = 8;
-        this.capacitorY = 15;
+        this.capacitorY = 17;
     }
 
     @Override
@@ -113,7 +114,7 @@ public class CircuitFabricatorScreen extends MachineScreen<CircuitFabricatorBloc
                             DrawableUtil.drawProgressTexture(matrices, this.leftPos + QUATERNARY_PROGRESS_X, this.topPos + QUATERNARY_PROGRESS_Y, QUATERNARY_PROGRESS_U, QUATERNARY_PROGRESS_V, PROGRESS_SIZE, Math.min(14, progress - (24 + 19 + 18 + 17 + 3)));
                         }
                         if (progress > 24 + 19 + 18 + 44 + 3) {
-                            DrawableUtil.drawProgressTexture(matrices, this.leftPos + QUINARY_PROGRESS_X, (float) (this.topPos + QUINARY_PROGRESS_Y - Math.floor(Math.min(QUINARY_PROGRESS_HEIGHT, progress - (24 + 19 + 18 + 44 + 3)))), QUINARY_PROGRESS_U, QUINARY_PROGRESS_V, PROGRESS_SIZE, Math.min(19, progress - (24 + 19 + 18 + 44 + 3)));
+                            DrawableUtil.drawProgressTexture(matrices, this.leftPos + QUINARY_PROGRESS_X, (float) (this.topPos + QUINARY_PROGRESS_Y - Math.min(QUINARY_PROGRESS_HEIGHT, progress - (24 + 19 + 18 + 44 + 3))), QUINARY_PROGRESS_U, QUINARY_PROGRESS_V, PROGRESS_SIZE, Math.min(19, progress - (24 + 19 + 18 + 44 + 3)));
                         }
                         if (progress > 24 + 19 + 18 + 65) {
                             DrawableUtil.drawProgressTexture(matrices, this.leftPos + SENARY_PROGRESS_X, this.topPos + SENARY_PROGRESS_Y, SENARY_PROGRESS_U, SENARY_PROGRESS_V, PROGRESS_SIZE, progress - (24 + 19 + 18 + 65));
