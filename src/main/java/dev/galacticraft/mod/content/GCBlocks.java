@@ -180,6 +180,7 @@ public class GCBlocks {
     public static final Block ASTEROID_ROCK = BLOCKS.registerWithItem(Constant.Block.ASTEROID_ROCK, new Block(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_BROWN).instrument(NoteBlockInstrument.BASEDRUM).destroyTime(3.0F).requiresCorrectToolForDrops()));
     public static final Block ASTEROID_ROCK_1 = BLOCKS.registerWithItem(Constant.Block.ASTEROID_ROCK_1, new Block(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_BROWN).instrument(NoteBlockInstrument.BASEDRUM).destroyTime(3.0F).requiresCorrectToolForDrops())); // todo naming
     public static final Block ASTEROID_ROCK_2 = BLOCKS.registerWithItem(Constant.Block.ASTEROID_ROCK_2, new Block(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_BROWN).instrument(NoteBlockInstrument.BASEDRUM).destroyTime(3.0F).requiresCorrectToolForDrops()));
+    public static final Block DENSE_ICE = BLOCKS.registerWithItem(Constant.Block.DENSE_ICE, new Block(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_BLUE).instrument(NoteBlockInstrument.BASEDRUM).destroyTime(1.0F).requiresCorrectToolForDrops()));
 
     // VENUS NATURAL
     public static final Block SOFT_VENUS_ROCK = BLOCKS.registerWithItem(Constant.Block.SOFT_VENUS_ROCK, new Block(BlockBehaviour.Properties.of().mapColor(MapColor.STONE).instrument(NoteBlockInstrument.BASEDRUM).strength(1.5F, 6.0F)));
@@ -233,7 +234,15 @@ public class GCBlocks {
     public static final Block ALUMINUM_ORE = BLOCKS.registerWithItem(Constant.Block.ALUMINUM_ORE, new DropExperienceBlock(ConstantInt.of(0), oreSettings(3.0F, 3.0F, false)));
     public static final Block DEEPSLATE_ALUMINUM_ORE = BLOCKS.registerWithItem(Constant.Block.DEEPSLATE_ALUMINUM_ORE, new DropExperienceBlock(ConstantInt.of(0), oreSettings(3.5F, 3.0F, true)));
 
+    public static final Block ASTEROID_ALUMINUM_ORE = BLOCKS.registerWithItem(Constant.Block.ASTEROID_ALUMINUM_ORE, new DropExperienceBlock(ConstantInt.of(0), oreSettings(3.5F, 3.0F, false)));
+    public static final Block ASTEROID_IRON_ORE = BLOCKS.registerWithItem(Constant.Block.ASTEROID_IRON_ORE, new DropExperienceBlock(ConstantInt.of(0), oreSettings(3.5F, 3.0F, false)));
+    public static final Block ASTEROID_SILICON_ORE = BLOCKS.registerWithItem(Constant.Block.ASTEROID_SILICON_ORE, new DropExperienceBlock(ConstantInt.of(0), oreSettings(3.5F, 3.0F, false)));
+
     public static final Block DESH_ORE = BLOCKS.registerWithItem(Constant.Block.DESH_ORE, new DropExperienceBlock(ConstantInt.of(0), oreSettings(3.0F, 5.0F, false)));
+
+    public static final Block MARS_IRON_ORE = BLOCKS.registerWithItem(Constant.Block.MARS_IRON_ORE, new DropExperienceBlock(ConstantInt.of(0), oreSettings(3.0F, 5.0F, false)));
+    public static final Block MARS_TIN_ORE = BLOCKS.registerWithItem(Constant.Block.MARS_TIN_ORE, new DropExperienceBlock(ConstantInt.of(0), oreSettings(3.0F, 5.0F, false)));
+    public static final Block MARS_COPPER_ORE = BLOCKS.registerWithItem(Constant.Block.MARS_COPPER_ORE, new DropExperienceBlock(ConstantInt.of(0), oreSettings(3.0F, 5.0F, false)));
 
     public static final Block ILMENITE_ORE = BLOCKS.registerWithItem(Constant.Block.ILMENITE_ORE, new DropExperienceBlock(ConstantInt.of(0), oreSettings(3.0F, 5.0F, false)));
 
@@ -316,10 +325,11 @@ public class GCBlocks {
     public static final Block OXYGEN_COMPRESSOR = BLOCKS.registerWithItem(Constant.Block.OXYGEN_COMPRESSOR, new SimpleMachineBlock(BlockBehaviour.Properties.of().mapColor(MapColor.METAL).strength(3.0F, 5.0F).sound(SoundType.METAL).requiresCorrectToolForDrops(), Constant.id(Constant.Block.OXYGEN_COMPRESSOR)));
     public static final Block OXYGEN_STORAGE_MODULE = BLOCKS.registerWithItem(Constant.Block.OXYGEN_STORAGE_MODULE, new ResourceStorageBlock(BlockBehaviour.Properties.of().mapColor(MapColor.METAL).strength(3.0F, 5.0F).sound(SoundType.METAL).requiresCorrectToolForDrops(), Constant.id(Constant.Block.OXYGEN_STORAGE_MODULE)));
     public static final Block FUEL_LOADER = BLOCKS.registerWithItem(Constant.Block.FUEL_LOADER, new FuelLoaderBlock(BlockBehaviour.Properties.of().mapColor(MapColor.METAL).strength(3.0F, 5.0F).sound(SoundType.METAL).requiresCorrectToolForDrops()));
+    public static final Block FOOD_CANNER = BLOCKS.registerWithItem(Constant.Block.FOOD_CANNER, new ResourceStorageBlock(BlockBehaviour.Properties.of().mapColor(MapColor.METAL).strength(3.0F, 5.0F).sound(SoundType.METAL).requiresCorrectToolForDrops(), Constant.id(Constant.Block.FOOD_CANNER)));
 
     public static final AirlockBlock AIR_LOCK_FRAME = BLOCKS.registerWithItem(Constant.Block.AIR_LOCK_FRAME, new AirlockBlock(false, BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK)));
     public static final AirlockBlock AIR_LOCK_CONTROLLER = BLOCKS.registerWithItem(Constant.Block.AIR_LOCK_CONTROLLER, new AirlockBlock(true, BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK)));
-    public static final Block AIR_LOCK_SEAL = BLOCKS.register(Constant.Block.AIR_LOCK_SEAL, new Block(BlockBehaviour.Properties.ofFullCopy(AIR_LOCK_FRAME)));
+    public static final Block AIR_LOCK_SEAL = BLOCKS.register(Constant.Block.AIR_LOCK_SEAL, new AirlockSealBlock(BlockBehaviour.Properties.ofFullCopy(AIR_LOCK_FRAME)));
 
     public static void register() {
         FlammableBlockRegistry.getDefaultInstance().add(FUEL, 80, 130);
